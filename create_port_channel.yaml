@@ -1,27 +1,16 @@
 ---
 - name: cisco create port_channel
-  hosts: SW
+  hosts: thirdteen
   gather_facts: no
   tasks:
   - name: channel-group 1-1
     ios_config:
       lines:
        - channel-group 1 mode active
-      parents: interface gigabitEthernet 0/0
+      parents: interface gigabitEthernet 1/0/23
 
   - name: channel-group 1-2
     ios_config:
      lines:
       - channel-group 1 mode active
-     parents: interface gigabitEthernet 0/1
-  - name: channel-group 2-1
-    ios_config:
-      lines:
-       - channel-group 2 mode active
-      parents: interface gigabitEthernet 0/2
-
-  - name: channel-group 2-2
-    ios_config:
-     lines:
-      - channel-group 2 mode active
-     parents: interface gigabitEthernet 0/3    
+     parents: interface gigabitEthernet 1/0/24

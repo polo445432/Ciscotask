@@ -1,0 +1,73 @@
+---
+- name: cisco create port_channel
+  hosts: Core
+  gather_facts: no
+  tasks:
+  - name: channel-group 151-1
+    ios_config:
+      lines:
+       - channel-group 151 mode active
+       - description AI-13-A-2950
+      parents: interface gigabitEthernet 1/2/1
+
+  - name: channel-group 151-2
+    ios_config:
+     lines:
+      - channel-group 151 mode active
+      - description AI-13-A-2950
+     parents: interface gigabitEthernet 2/2/1
+  - name: channel-group 152-1
+    ios_config:
+      lines:
+       - channel-group 152 mode active
+       - description AI-13-B-2950
+      parents: interface gigabitEthernet 1/2/2
+
+  - name: channel-group 152-2
+    ios_config:
+     lines:
+      - channel-group 152 mode active
+      - description AI-13-B-2950
+     parents: interface gigabitEthernet 2/2/2
+  - name: channel-group 153-1
+    ios_config:
+      lines:
+       - channel-group 153 mode active
+       - description AI-13-C-2950
+      parents: interface gigabitEthernet 1/2/3
+
+  - name: channel-group 153-2
+    ios_config:
+     lines:
+      - channel-group 153 mode active
+      - description AI-13-C-2950
+     parents: interface gigabitEthernet 2/2/3
+  - name: channel-group 154-1
+    ios_config:
+      lines:
+       - channel-group 154 mode active
+       - description AI-13-D-2950
+      parents: interface gigabitEthernet 1/2/4
+
+  - name: channel-group 154-2
+    ios_config:
+     lines:
+      - channel-group 154 mode active
+      - description AI-13-D-2950
+     parents: interface gigabitEthernet 2/2/4
+  - name: channel-group 155-1
+    ios_config:
+      lines:
+       - channel-group 155 mode active
+       - description AI-13-E-2950
+      parents: interface gigabitEthernet 1/2/5
+
+  - name: channel-group 155-2
+    ios_config:
+     lines:
+      - channel-group 155 mode active
+      - description AI-13-E-2950
+     parents: interface gigabitEthernet 2/2/5
+
+
+     

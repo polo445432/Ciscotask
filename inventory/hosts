@@ -1,6 +1,9 @@
-[RO]
-R1
-R2
-[SW]
-SW1
-SW2
+[thirdteen]
+SW13A
+SW13B
+SW13C
+SW13D
+SW13E
+[Core]
+Core1
+Core2
