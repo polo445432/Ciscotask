@@ -2,72 +2,102 @@
 - name: cisco create port_channel
   hosts: Core
   gather_facts: no
+
+  vars:
+   int1:
+   - interface gigabitEthernet 1/2/1
+   - interface gigabitEthernet 1/2/2
+   - interface gigabitEthernet 1/2/3
+   - interface gigabitEthernet 1/2/4
+   - interface gigabitEthernet 1/2/5
+   int2:
+    - interface gigabitEthernet 2/2/1
+    - interface gigabitEthernet 2/2/2
+    - interface gigabitEthernet 2/2/3
+    - interface gigabitEthernet 2/2/4
+    - interface gigabitEthernet 2/2/5
+   channel_group:
+    - 151
+    - 152
+    - 153
+    - 154
+    - 155
+   description:
+    - AI-13-A-2950
+    - AI-13-B-2950
+    - AI-13-C-2950
+    - AI-13-D-2950
+    - AI-13-E-2950
+    
+
+
+
   tasks:
   - name: channel-group 151-1
     ios_config:
       lines:
-       - channel-group 151 mode active
-       - description AI-13-A-2950
-      parents: interface gigabitEthernet 1/2/1
+       - channel-group 1 {{ channel_group[0] }} mode active
+       - description {{ description[0] }}
+      parents: {{ int1[0] }}
 
   - name: channel-group 151-2
     ios_config:
      lines:
-      - channel-group 151 mode active
-      - description AI-13-A-2950
-     parents: interface gigabitEthernet 2/2/1
+      - channel-group {{ channel_group[0] }} mode active
+      - description{{ description[0] }}
+     parents:  {{ int2[0] }}
   - name: channel-group 152-1
     ios_config:
       lines:
-       - channel-group 152 mode active
-       - description AI-13-B-2950
-      parents: interface gigabitEthernet 1/2/2
+       - channel-group {{ channel_group[1] }} mode active
+       - description {{ description[1] }}
+      parents:  {{ int1[1] }}
 
   - name: channel-group 152-2
     ios_config:
      lines:
-      - channel-group 152 mode active
-      - description AI-13-B-2950
-     parents: interface gigabitEthernet 2/2/2
+      - channel-group {{ channel_group[1] }} mode active
+      - description {{ description[1] }}
+     parents:  {{ int2[1] }}
   - name: channel-group 153-1
     ios_config:
       lines:
-       - channel-group 153 mode active
-       - description AI-13-C-2950
-      parents: interface gigabitEthernet 1/2/3
+       - channel-group {{ channel_group[2] }} mode active
+       - description {{ description[2] }}
+      parents:  {{ int1[2] }}
 
   - name: channel-group 153-2
     ios_config:
      lines:
-      - channel-group 153 mode active
-      - description AI-13-C-2950
-     parents: interface gigabitEthernet 2/2/3
+      - channel-group {{ channel_group[2] }} mode active
+      - description {{ description[2] }}
+     parents:  {{ int2[2] }}
   - name: channel-group 154-1
     ios_config:
       lines:
-       - channel-group 154 mode active
-       - description AI-13-D-2950
-      parents: interface gigabitEthernet 1/2/4
+       - channel-group {{ channel_group[3] }} mode active
+       - description {{ description[3] }}
+      parents:  {{ int1[3] }}
 
   - name: channel-group 154-2
     ios_config:
      lines:
-      - channel-group 154 mode active
-      - description AI-13-D-2950
-     parents: interface gigabitEthernet 2/2/4
+      - channel-group {{ channel_group[3] }} mode active
+      - description {{ description[3] }}
+     parents:  {{ int2[3] }}
   - name: channel-group 155-1
     ios_config:
       lines:
-       - channel-group 155 mode active
-       - description AI-13-E-2950
-      parents: interface gigabitEthernet 1/2/5
+       - channel-group {{ channel_group[4] }} mode active
+       - description {{ description[4] }}
+      parents: {{ int1[4] }}
 
   - name: channel-group 155-2
     ios_config:
      lines:
-      - channel-group 155 mode active
-      - description AI-13-E-2950
-     parents: interface gigabitEthernet 2/2/5
+      - channel-group {{ channel_group[4] }} mode active
+      - description {{ description[4] }}
+     parents:  {{ int2[4] }}
 
 
      
