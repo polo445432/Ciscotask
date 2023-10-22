@@ -1,0 +1,11 @@
+---
+- name: 更改不同设备上不同端口的 VLAN 配置
+  hosts: switches
+  gather_facts: no
+  tasks:
+    - name: 配置 VLAN
+      ios_config:
+        lines:
+          - interface {{ interface }}
+          - switchport access vlan {{ vlan_id }}
+      delegate_to: "{{ inventory_hostname }}"
