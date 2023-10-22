@@ -8,7 +8,7 @@ ansible_become_password: test123
 
 
 
----
+
 switches:
   - hostname: switch1
     interfaces:
