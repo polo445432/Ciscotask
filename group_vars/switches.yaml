@@ -12,9 +12,10 @@ ansible_become_password: test123
 switches:
   - hostname: switch1
     interfaces:
-       vlan_id: 39 
-       interface: GigabitEthernet0/2
+      - vlan_id: 39 
+        interface: GigabitEthernet0/2
   - hostname: switch2
     interfaces:
-       vlan_id: 40
-       interface: GigabitEthernet1/2
+      - vlan_id: 40
+        interface: GigabitEthernet1/2
+
