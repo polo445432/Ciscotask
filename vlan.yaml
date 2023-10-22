@@ -9,4 +9,5 @@
           - interface {{ item.interface }}
           - switchport access vlan {{ item.vlan_id }}
       delegate_to: "{{ inventory_hostname }}"
+      when: item.hostname == inventory_hostname
       with_items: "{{ interfaces }}"
