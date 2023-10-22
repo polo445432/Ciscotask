@@ -6,18 +6,6 @@ ansible_become: yes
 ansible_become_method: enable
 ansible_become_password: test123 
 
-
-
-
-# switches:
-#   - hostname: switch1
-#     interfaces:
-#       - vlan_id: 39 
-#         interface: GigabitEthernet0/2
-#   - hostname: switch2
-#     interfaces:
-#       - vlan_id: 40
-#         interface: GigabitEthernet1/2
 interfaces:
   - hostname: switch1
     vlan_id: 39
@@ -28,5 +16,5 @@ interfaces:
   - hostname: switch3
     vlan_id: 41
     interface: GigabitEthernet2/2
-  # 继续列出其他设备和端口
+  
 
