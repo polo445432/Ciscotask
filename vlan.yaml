@@ -8,7 +8,7 @@
     - name: 调试
       debug:
         var: item
-      with_items: "{{ _1F }}"
+      with_items: "{{ F1 }}"
 
     - name: 配置 VLAN
       ios_config:
@@ -17,5 +17,5 @@
           - switchport access vlan {{ item.vlan_id }}
         parents: interface {{ item.interface }}
       delegate_to: "{{ inventory_hostname }}"
-      with_items: "{{ _1F }}"
+      with_items: "{{ F1 }}"
 
