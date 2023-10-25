@@ -13,3 +13,7 @@
         parents: interface {{ item.interface }}
       delegate_to: "{{ inventory_hostname }}"
       with_items: "{{ _1F }}"
+    - name: 配置 VLAN
+      debug:
+        var: item.interface
+      with_items: "{{ _1F }}"
