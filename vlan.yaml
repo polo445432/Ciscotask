@@ -15,5 +15,5 @@
       with_items: "{{ _1F }}"
     - name: 配置 VLAN
       debug:
-        var: item.interface
-      with_items: "{{ _1F }}"
+        var: _1F
+
