@@ -1,6 +1,6 @@
 all:
   children:
-    _1F:  
+    Floor1:  
       hosts:
         switch1:
           ansible_host: 10.36.56.30
