@@ -12,4 +12,4 @@
           - switchport access vlan {{ item.vlan_id }}
         parents: interface {{ item.interface }}
       delegate_to: "{{ inventory_hostname }}"
-      with_items: "{{ interfaces }}"
+      with_items: "{{ 1F }}"
