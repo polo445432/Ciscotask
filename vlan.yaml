@@ -1,6 +1,6 @@
 ---
 - name: 配置不同设备上不同端口的 VLAN
-  hosts: switches
+  hosts: 1F
   gather_facts: no
   vars:
     ansible_python_interpreter: /usr/bin/python3

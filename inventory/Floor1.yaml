@@ -1,6 +1,6 @@
 all:
   children:
-    ios_switches:  
+    1F:  
       hosts:
         switch1:
           ansible_host: 10.36.56.30

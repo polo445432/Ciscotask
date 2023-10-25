@@ -1,4 +1,4 @@
-interfaces:
+1F:
   - hostname: switch1
     vlan_id: 39
     interface: FastEthernet0/2
