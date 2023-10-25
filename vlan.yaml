@@ -5,17 +5,11 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
   tasks:
-    # - name: 调试
-    #   debug:
-    #     var: item
-    #   with_items: "{{ F1 }}"
-
     - name: 配置 VLAN
       ios_config:
         lines:
           - interface {{ item.interface }}
-          - switchport access vlan {{ item.vlan_id }}
+          - switchport access vlan {{ hostvars[inventory_hostname].vlan_id }}
         parents: interface {{ item.interface }}
       delegate_to: "{{ inventory_hostname }}"
-      with_items: "{{ F1 }}"
-
+      with_items: "{{ hostvars[inventory_hostname].interfaces }}"

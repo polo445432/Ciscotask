@@ -1,9 +1,13 @@
 all:
   children:
-    Floor1:  
+    Floor1:
       hosts:
         switch1:
           ansible_host: 10.36.56.30
+        switch2:
+          ansible_host: 10.36.56.31
+        # 添加其他交换机信息
+
       vars:
         ansible_connection: network_cli
         ansible_network_os: ios
@@ -12,9 +16,9 @@ all:
         ansible_become: yes
         ansible_become_method: enable
         ansible_become_password: kooI30
-      F1:
-        hosts:
-          switch1:
-            hostname: switch1
-            vlan_id: 39
-            interface: FastEthernet0/2
+      vlan_id: 39  # 为所有交换机配置的VLAN ID
+      interfaces:
+        - FastEthernet0/2
+        - FastEthernet0/3
+        - FastEthernet0/4
+        # 添加其他端口信息
