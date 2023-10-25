@@ -1,6 +1,6 @@
 ---
 - name: 配置不同设备上不同端口的 VLAN
-  hosts: 1F
+  hosts: Floor1
   gather_facts: no
   vars:
     ansible_python_interpreter: /usr/bin/python3
@@ -12,4 +12,4 @@
           - switchport access vlan {{ item.vlan_id }}
         parents: interface {{ item.interface }}
       delegate_to: "{{ inventory_hostname }}"
-      with_items: "{{ 1F }}"
+      with_items: "{{ _1F }}"
