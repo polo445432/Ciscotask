@@ -14,9 +14,9 @@ all:
         ansible_become: yes
         ansible_become_method: enable
         ansible_become_password: kooI30
-      _1F:
-      hosts:
-        switch1:
-          hostname: switch1
-          vlan_id: 39
-          interface: FastEthernet0/2
+        _1F:
+        hosts:
+          switch1:
+            hostname: switch1
+            vlan_id: 39
+            interface: FastEthernet0/2
