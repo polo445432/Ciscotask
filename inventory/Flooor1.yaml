@@ -1,0 +1,16 @@
+all:
+  children:
+    ios_switches:  
+      hosts:
+        switch1:
+          ansible_host: 10.36.56.30
+        # switch2:
+        #   ansible_host: 10.36.1.2
+      vars:
+        ansible_connection: network_cli
+        ansible_network_os: ios
+        ansible_user: c.polo
+        ansible_password: PPcc11!!
+        ansible_become: yes
+        ansible_become_method: enable
+        ansible_become_password: kooI30
