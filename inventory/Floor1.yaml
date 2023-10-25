@@ -4,8 +4,6 @@ all:
       hosts:
         switch1:
           ansible_host: 10.36.56.30
-        # switch2:
-        #   ansible_host: 10.36.1.2
       vars:
         ansible_connection: network_cli
         ansible_network_os: ios
@@ -14,7 +12,7 @@ all:
         ansible_become: yes
         ansible_become_method: enable
         ansible_become_password: kooI30
-        _1F:
+      _1F:
         hosts:
           switch1:
             hostname: switch1
